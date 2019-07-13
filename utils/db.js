@@ -1,5 +1,5 @@
 var mysql = require("mysql");
-var databaseConfig = require("../config/database.config.js");
+var databaseConfig = require("../config/database.config");
 
 module.exports = {
   query: (sql, params, cb) => {
