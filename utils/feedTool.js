@@ -10,9 +10,16 @@ module.exports = {
   },
   trip: {
     createtrip: req => {
-      var payload = ["trip", req.intro, req.tags, req.coverUrl, req.title];
+      var payload = [
+        "trip",
+        req.intro,
+        req.tags,
+        req.coverUrl,
+        req.title,
+        Date.now()
+      ];
       let sql =
-        "INSERT INTO feeds (type,intro,tags,cover_url,title) VALUES(?,?,?,?,?)";
+        "INSERT INTO feeds (type,intro,tags,cover_url,title,date) VALUES(?,?,?,?,?,?)";
       db.query(sql, payload);
     }
   },
